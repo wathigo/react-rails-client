@@ -1,5 +1,7 @@
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import React from 'react';
+import { connect } from 'react-redux';
+import Actions from '../actions';
 
 
 const mapStyles = {
