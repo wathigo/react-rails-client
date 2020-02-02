@@ -4,6 +4,20 @@ import { connect } from 'react-redux';
 import Actions from '../actions';
 
 
+const mapStateToProps = function (state) {
+  return {
+    properties: state.properties
+  };
+};
+
+const mapDispatchToProps = function (dispatch) {
+  return {
+    filterBooks: (filter) => {
+      dispatch(Actions.allProperties(filter));
+    },
+  };
+};
+
 const mapStyles = {
   width: '100%',
   height: '100%'

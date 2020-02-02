@@ -1,19 +1,19 @@
 const initialState = {
     fetching: false,
-    properties: [],
+    categories: [],
     error: null
 }
 
-const propertyReducer = (state = initialState, action) => {
+const categoryReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'ALL_PROPERTIES':
+    case 'ALL_CATEGORIES':
       return {
         ...state,
-        properties: action.properties
-      };
+        categories: action.categories
+      }
       break;
 
-    case 'ALL_PROPERTIES_REQUESTS':
+    case 'ALL_CATEGORIES_REQUESTS':
       return {
         ...state,
         fetching: true
@@ -22,7 +22,8 @@ const propertyReducer = (state = initialState, action) => {
 
     default:
       return state;
+      break;
   }
 };
 
-export default propertyReducer;
+export default categoryReducer;
