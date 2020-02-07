@@ -6,6 +6,7 @@ import fetchData from '../services/fetch_data'
 
 import LoadingSpinner from '../spinners/clip';
 import HomeMap from './home_map';
+import DropDown from './drop_down'
 
 
 class HomePage extends React.Component {
@@ -33,7 +34,10 @@ class HomePage extends React.Component {
         if(this.shouldComponentRender()) return <LoadingSpinner />
 
         return (
+          <div>
+            <DropDown categories={categories.categories}/>
             <HomeMap properties={properties} />
+          </div>
         )
     }
 }

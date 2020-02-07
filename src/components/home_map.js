@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Actions from '../actions';
 import { bindActionCreators } from 'redux';
 
-import LoadingSpinner from '../spinners/clip';
 
 const mapStyles = {
   width: '100%',

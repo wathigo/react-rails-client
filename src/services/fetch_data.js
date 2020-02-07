@@ -21,13 +21,13 @@ const getProperties = (data, dispatch) => {
     .then((response) => response.json())
     .then((data) => {
           properties = properties.concat(data);
-          dispatch(allProperties(properties))
          })
       .catch(err => {
         dispatch(fetch_properties_error(err))
       })
 
        });
+       dispatch(allProperties(properties))
   }
 const handleAsync = (dispatch) => {
   let  targetUrl = 'https://nameless-oasis-30857.herokuapp.com/categories'
