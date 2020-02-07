@@ -15,11 +15,12 @@ const getProperties = (data, dispatch) => {
   let properties = [];
   dispatch(allPropertiesRequests())
   data.forEach(category => {
+    console.log(category.id)
     let  targetUrl = `https://nameless-oasis-30857.herokuapp.com/categories/${category.id}/properties`
     fetch(proxyUrl + targetUrl)
     .then((response) => response.json())
     .then((data) => {
-          properties = properties + data;
+          properties = properties.concat(data);
           dispatch(allProperties(properties))
          })
       .catch(err => {
