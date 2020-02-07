@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import * as ReduxThunk from 'redux-thunk'
 import rootReducer from './reducers'
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import fetchData from './services/fetch_data'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

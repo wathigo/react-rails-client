@@ -9,6 +9,7 @@ const categoryReducer = (state = initialState, action) => {
     case 'ALL_CATEGORIES':
       return {
         ...state,
+        fetching: false,
         categories: action.categories
       }
       break;

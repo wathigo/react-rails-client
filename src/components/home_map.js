@@ -2,26 +2,15 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import React from 'react';
 import { connect } from 'react-redux';
 import Actions from '../actions';
+import { bindActionCreators } from 'redux';
 
-
-const mapStateToProps = function (state) {
-  return {
-    properties: state.properties
-  };
-};
-
-const mapDispatchToProps = function (dispatch) {
-  return {
-    filterBooks: (filter) => {
-      dispatch(Actions.allProperties(filter));
-    },
-  };
-};
+import LoadingSpinner from '../spinners/clip';
 
 const mapStyles = {
   width: '100%',
   height: '100%'
 };
+
 
 export class MapContainer extends React.Component {
   state = {

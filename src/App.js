@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Map from './components/HomeMap'
+import HomePage from './components/home_page'
 
 function App() {
   return (
     <div className="App">
-      <Map />
+      <HomePage />
     </div>
   );
 }

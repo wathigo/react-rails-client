@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import propertyReducer from './categories';
-import categoryReducer from './properties';
+import propertyReducer from './properties';
+import categoryReducer from './categories';
 
 const rootReducer = combineReducers({
   categories: categoryReducer,

@@ -9,6 +9,7 @@ const propertyReducer = (state = initialState, action) => {
     case 'ALL_PROPERTIES':
       return {
         ...state,
+        fetching: false,
         properties: action.properties
       };
       break;
