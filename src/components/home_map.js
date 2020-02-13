@@ -34,17 +34,25 @@ export class MapContainer extends React.Component {
     }
   };
   render() {
+    const { properties } = this.props;
+    console.log(properties)
+    const markers = properties.map(property => {
+      return (<Marker
+        onClick={this.onMarkerClick}
+        name={property.name}
+        position={{lat: property.latt, lng: property.long}}
+      />)
+    })
     return (
       <Map
         google={this.props.google}
-        zoom={14}
+        zoom={2}
         style={mapStyles}
         initialCenter={{ lat: -1.2884, lng: 36.8233 }}
       >
-        <Marker
-          onClick={this.onMarkerClick}
-          name={'Kenyatta International Convention Centre'}
-        />
+
+      {markers}
+
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
@@ -63,5 +71,5 @@ export class MapContainer extends React.Component {
 
 
 export default GoogleApiWrapper({
-  apiKey: ('AIzaSyDGZavMvlSD6vBDeDzcfJwrF7HZIU09F0g')
+  apiKey: (process.env.API_KEY)
 })(MapContainer)

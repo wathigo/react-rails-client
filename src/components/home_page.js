@@ -36,7 +36,7 @@ class HomePage extends React.Component {
         return (
           <div>
             <DropDown categories={categories.categories}/>
-            <HomeMap properties={properties} />
+            <HomeMap properties={properties.properties} />
           </div>
         )
     }
